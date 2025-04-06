@@ -5,7 +5,7 @@ Simple php opcache using laravel commands for most versions minimum v5.3.
 ## **Installation**
 The package can be installed via composer:
 ```
-composer require moviet/lopcache dev-main
+composer require moviet/opcache dev-main
 ```
 
 ## **Usage**
