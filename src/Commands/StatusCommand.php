@@ -22,7 +22,7 @@ class StatusCommand extends Command
     {
         $info = Opcode::getStatus();
         $base = $info;
-        unset($base['memory_usage'], $base['interned_strings_usage'], $base['opcache_statistics']);
+        unset($base['memory_usage'], $base['interned_strings_usage'], $base['opcache_statistics'], $base['jit']);
 
         if ($info) {
             $header = ['key', 'value'];
@@ -44,6 +44,12 @@ class StatusCommand extends Command
                 $this->info('OPcache statistics:');
                 $this->table($header, CommandUtil::prepareTable($info['opcache_statistics']), 'box-double');
             }
+            
+            if (isset($info['jit'])) {
+                $this->info('Jit:');
+                $this->table($header, CommandUtil::prepareTable($info['jit']), 'box-double');
+            }
+
         } else {
             $this->error('An error occurred while get status opcache');
             exit(2);

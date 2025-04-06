@@ -30,7 +30,7 @@ class CommandUtil
     public static function prepareValue($key, $value)
     {
         if (strpos($key, 'memory') !== false || strpos($key, 'size') !== false) {
-            return self::formatBytes($value);
+            return self::formatBytes($value)[0];
         }
         if (strpos($key, 'time') !== false) {
             return date('Y-m-d H:i:s', $value);
@@ -48,6 +48,7 @@ class CommandUtil
     public static function formatBytes($bytes): string
     {
         $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
-        return @round($bytes / pow(1024, ($i = floor(log($bytes, 1024)))), 2) . ' ' . $unit[$i];
+        $data[] = ($bytes > 0) ? @round($bytes / pow(1024, ($i = floor(log($bytes, 1024)))), 2) .''. $unit[$i] : '0';
+        return $data;
     }
 }
