@@ -1,5 +1,6 @@
 {
   "name": "moviet/opcache",
+  "version": "1.0.0",
   "description": "Simple laravel opcache using artisan commands for most versions",
   "license": "MIT",
   "keywords": [
@@ -8,7 +9,6 @@
     "php",
     "artisan"
   ],
-  "minimum-stability": "stable",
   "config": {
     "sort-packages": true
   },
