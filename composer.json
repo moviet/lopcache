@@ -1,5 +1,5 @@
 {
-  "name": "moviet/lopcache",
+  "name": "moviet/opcache",
   "description": "Simple laravel opcache using artisan commands for most versions",
   "license": "MIT",
   "keywords": [
