@@ -1,12 +1,14 @@
 <?php
 namespace Moviet\Opcache;
 
+use Illuminate\Support\ServiceProvider;
+
 /**
  * Class OpcodeServiceProvider
  * @package Moviet\Opcache
  * \Illuminate\Support\ServiceProvider Multi Versions > Framework 5.0
  */
-class OpcodeServiceProvider extends \Illuminate\Support\ServiceProvider
+class OpcodeServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -15,9 +17,9 @@ class OpcodeServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Moviet\Opcache\Commands\ClearCommand::class,
-                Moviet\Opcache\Commands\ConfigCommand::class,
-                Moviet\Opcache\Commands\StatusCommand::class,
+                Commands\ClearCommand::class,
+                Commands\ConfigCommand::class,
+                Commands\StatusCommand::class,
             ]);
         }
     }

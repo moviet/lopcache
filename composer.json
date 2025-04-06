@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Moviet\\Opcache\\": "src/"
+      "Moviet\\Opcache\\": "src"
     }
   },
   "require": {
