@@ -1,0 +1,32 @@
+{
+  "name": "moviet/opcache",
+  "version": "1.0.0",
+  "description": "Simple laravel opcache using artisan commands for most versions",
+  "license": "MIT",
+  "keywords": [
+    "opcache",
+    "laravel",
+    "php",
+    "artisan"
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Moviet\\Opcache\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^5.3"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Moviet\\Opcache\\OpcodeServiceProvider"
+      ]
+    }
+  }
+}
